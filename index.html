@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annuaire de la cohorte — Conversations Inspirantes 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Barre d'en-tête">
+      <a class="brand" href="#accueil" aria-label="Fondation Hystérésis">
+        <img src="logo-fondation-hysteresis.png" alt="Logo Fondation Hystérésis" />
+      </a>
+      <div class="topbar-actions">
+        <a href="#annuaire" class="ghost-link">Explorer l’annuaire</a>
+        <button type="button" id="printBtn" class="btn btn-small">Imprimer / PDF</button>
+      </div>
+    </nav>
+
+    <section id="accueil" class="hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow">Fondation Hystérésis · Conversations Inspirantes 2026</p>
+        <h1>Annuaire inspirant de la cohorte</h1>
+        <p class="lead">
+          Un espace vivant pour identifier les talents, encourager l’entraide entre PLC
+          et créer des passerelles par région, par domaine et par opportunité.
+        </p>
+        <div class="hero-actions">
+          <a href="#annuaire" class="btn">Voir les bénéficiaires</a>
+          <a href="#regions" class="btn btn-secondary">Voir les régions</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Statistiques rapides">
+        <div class="stat">
+          <strong id="statTotal">53</strong>
+          <span>bénéficiaires confirmés</span>
+        </div>
+        <div class="stat">
+          <strong id="statRegions">6</strong>
+          <span>zones / régions</span>
+        </div>
+        <div class="stat">
+          <strong id="statFunctions">9</strong>
+          <span>familles de fonctions</span>
+        </div>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section class="section intro-grid">
+      <article class="feature-card">
+        <span class="icon-badge">🤝</span>
+        <h2>Créer des connexions utiles</h2>
+        <p>Repérer rapidement qui peut aider, collaborer, recommander ou partager une ressource.</p>
+      </article>
+      <article class="feature-card">
+        <span class="icon-badge">📍</span>
+        <h2>Valoriser les régions</h2>
+        <p>Mettre en lumière les talents de chaque zone, avec Ouémé-Plateau regroupé pour une lecture fluide.</p>
+      </article>
+      <article class="feature-card">
+        <span class="icon-badge">🚀</span>
+        <h2>Activer les opportunités</h2>
+        <p>Préparer les mises en relation, le mentorat, les recommandations et les suites du parcours.</p>
+      </article>
+    </section>
+
+    <section id="regions" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Vue d’ensemble</p>
+        <h2>Répartition par région</h2>
+      </div>
+      <div id="regionSummary" class="region-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Domaines</p>
+        <h2>Index rapide par fonction</h2>
+      </div>
+      <div id="functionSummary" class="pill-cloud"></div>
+    </section>
+
+    <section id="annuaire" class="section directory-shell">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">Annuaire interactif</p>
+          <h2>Explorer la cohorte</h2>
+        </div>
+        <div class="view-switch" aria-label="Changer le mode d’affichage">
+          <button type="button" class="switch-btn active" data-view="cards">Cartes</button>
+          <button type="button" class="switch-btn" data-view="table">Tableau</button>
+        </div>
+      </div>
+
+      <div class="filters" role="search" aria-label="Filtres de l’annuaire">
+        <label>
+          Recherche
+          <input id="searchInput" type="search" placeholder="Nom, commune, domaine, email..." />
+        </label>
+        <label>
+          Région
+          <select id="regionFilter">
+            <option value="">Toutes les régions</option>
+          </select>
+        </label>
+        <label>
+          Fonction
+          <select id="functionFilter">
+            <option value="">Toutes les fonctions</option>
+          </select>
+        </label>
+        <button type="button" id="resetBtn" class="btn btn-secondary">Réinitialiser</button>
+      </div>
+
+      <div class="results-bar">
+        <p><strong id="resultCount">0</strong> bénéficiaire(s) affiché(s)</p>
+        <p class="hint">Astuce : cliquez sur une région ou une fonction pour filtrer automatiquement.</p>
+      </div>
+
+      <div id="cardsView" class="cards-grid"></div>
+
+      <div id="tableView" class="table-wrap hidden">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Région</th>
+              <th>Commune</th>
+              <th>Fonction</th>
+              <th>Profil</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody id="directoryTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section plc-block">
+      <div>
+        <p class="eyebrow">Séquence 3 · Module 3</p>
+        <h2>Comment exploiter cet annuaire dans les PLC ?</h2>
+        <p>
+          L’annuaire peut servir de support d’activation : chaque PLC identifie ses ressources internes,
+          contacte les profils complémentaires et prépare des binômes d’entraide pour finaliser les dépôts,
+          les objectifs SMART, LinkedIn et les opportunités post-parcours.
+        </p>
+      </div>
+      <ol class="steps">
+        <li><strong>Identifier</strong> les talents de son PLC et de sa région.</li>
+        <li><strong>Former des binômes</strong> par besoin : LinkedIn, Ikigai, projet, numérique.</li>
+        <li><strong>Préparer une mini-carte d’opportunités</strong> pour la clôture.</li>
+        <li><strong>Mettre à jour ses informations</strong> avant toute diffusion externe.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fondation Hystérésis · Hystérésis Academy · Document interne de cohorte</p>
+    <p class="small">Confidentialité : usage réservé à l’entraide, aux PLC et à l’orientation des opportunités. Avant toute diffusion publique, recueillir l’accord des bénéficiaires concernés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
